@@ -220,6 +220,58 @@ add文件后就不会做显示
 * `git rm -r *` ： 递归删除某个目录下的所有文件（慎重）
 
 **删除后记得`git commit`提交**
+# 9.分支结构
+`git branch`查看 Git 仓库的分支情况
+![[Pasted image 20231201133730.png]]
+显示仓库中的分支情况，现在仅有一个main分支，
+其中main分支前的`*`号表示“当前所在的分支”，
+例如 * main就意味所在的位置为demo仓库的主分支。
+输入命令`git branch a`，再输入命令`git branch`，结果如下图所示：
+![[Pasted image 20231201134014.png]]
+创建了一个名为a的分支，并且当前的位置仍然为主分支。
+
+`git checkout`切换分支
+![[Pasted image 20231201134345.png]]
+
+可以在创建分支的同时，直接切换到新分支，
+命令为`git checkout -b`
+![[Pasted image 20231201134550.png]]
+
+`git merge`分支合并
+![[Pasted image 20231201134854.png]]
+注意：合并分支时，要考虑到两个分支是否有冲突，
+如果有冲突，则不能直接合并，需要先解决冲突；
+反之，则可以直接合并。
+
+`git branch -d`分支删除
+![[Pasted image 20231201135125.png]]
+有时，通过git branch -d命令会删除不了，
+例如分支a的代码没有合并到主分支等，
+如果一定要删除该分支，
+可以通过命令`git branch -D`进行强制删除。
+
+`git tag <标签>`分支添加标签
+如 git tag v1.0
+![[Pasted image 20231201140100.png]]
+`git tag`查看当前分支标签
+
+`git checkout <标签>`切换到指定标签的分支
+![[Pasted image 20231201140913.png]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
