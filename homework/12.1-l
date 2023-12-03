@@ -3,21 +3,33 @@
 其他点数玩家继续摇骰子， 如果摇出了7点，庄家胜； 如果摇出了第一次摇的点数，玩家胜； 
 其他点数，玩家继续摇骰子，直到分出胜负。
 
+money = float(input("请下注："))
+while True:
+    if money >= 100 :
+        print("游戏开始")
+        break
+    else:
+        money = float(input("重新下注："))
 
-num_1 = int(input("第1次摇骰子的结果"))
+num_1 = int(input("第1次摇骰子的结果："))
 if num_1 == 7 or num_1 == 11:
     print("玩家胜")
+    money = money * 2
 elif num_1 == 2 or num_1 == 3 or num_1 == 12 :
     print("庄家胜")
+    money = 0
 else:
     count = 2
     while True:
-        num = int(input(f"第{count}次摇骰子的结果"))
+        num = int(input(f"第{count}次摇骰子的结果："))
         if num == 7:
             print("庄家胜")
+            money = 0
             break
         elif num == num_1:
             print("玩家胜")
+            money = money * 2
             break
         else:
             count += 1
+
