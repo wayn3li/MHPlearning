@@ -1,0 +1,43 @@
+from random import randint
+money = int(input('美女荷官在线掷骰，请充值你的本钱吧！充的越多赚的越多哦!请输入你的充值金额：'))
+while money > 0:
+    print(f'游戏开始喽，你目前还有：{money}元哦！')
+    flag = False
+    while True:
+        debt = int(input('请为荷官姐姐下注哦老板!请输入你的下注金额：'))
+        if 0 <= debt <= money:
+            print('美女姐姐在线掷骰')
+            break
+        else:
+            print('你的money不足，请充值')
+            flag = True
+            break
+    first_number = randint(1, 6)+randint(1, 6)
+    print(f'荷官姐姐为你摇出{first_number}点')
+    if first_number == 7 or first_number == 11:
+        print('你赢了')
+        money += debt
+        break
+    elif first_number == 2 or first_number == 3 or first_number == 12:
+        print(' 你输了')
+        money -= debt
+        break
+    else:
+        print('游戏继续')
+        flag = True  # 退出第一次循环
+    while '你赢了'or'你输了':
+        second_number = randint(1, 6) + randint(1, 6)
+        print(f"本次美女荷官为你摇出{second_number}点")
+        if second_number ==7:
+            print('你输了')
+            money -= debt
+            break
+        elif second_number == first_number:
+            print('你赢了')
+            money += debt
+            break
+        else:
+            print('游戏继续')
+print(f'你的余额为{money}元。')
+if money < 0:
+    print('输光了再充点吧！')
