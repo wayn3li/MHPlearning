@@ -1,1 +1,42 @@
+for num in range(0, 101):
+
+    if num >= 90:
+        print(f"该同学的学习成绩为{num},\t学习等级A")
+    elif 89 >= num >= 60:
+        print(f"该同学的学习成绩为{num},\t学习等级为B")
+    else:
+        print(f"该同学学习成绩为{num},\t学习等级为C")
+
+
+
+N = 10
+l = []
+
+for i in range(N):
+    l.append(int(input("请输入")))
+
+for i in range(N - 1):
+    min = i
+    for j in range(i + 1, N):
+        if l[min] > l[j]:
+            min = j
+    l[i], l[min] = l[min], l[i]
+
+    print('从小到大排序：')
+    for i in range(N):
+        print(l[i])
+
+num = str(input("请输入一个数字"))
+s = str(num)
+s = s [::-1]
+print(f"输出的值为{s}")
+
+
+n = int(input("输入n为"))
+num2 = int(input("输入a为"))
+s = 0
+for i in range(n):
+    s = s +num2
+    num2 = n * 10 + num2
+print(s)
 
