@@ -1,0 +1,24 @@
+class people:
+    def __init__(self,group1,group2):
+        self.group1 = group1
+        self.group2 = group2
+
+class group1(people):
+    def studyself(self,name,work):
+        self.name = name
+        self.work = work
+        self.group1()
+        print(f"我是西安邮电大学的{self.name}我的工作为：{self.work}")
+
+    def group1(self):
+
+        print("供研究生使用")
+class group2(people):
+    def lab_person(self,name,work):
+        self.name = name
+        self.work = work
+        self.group2()
+        print(f"我是西安邮电大学的{self.name}我的工作为{self.work}")
+
+    def group2(self):
+        print("供实验室自己使用")
