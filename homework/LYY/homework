@@ -1,0 +1,22 @@
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+
+class Post_graduate(Person):
+    def __init__(self, name, work):
+        super().__init__(name)
+        self.work = work
+
+    def thing(self):
+        print(f'我的名字是{self.name},为西安邮电大学研究生，我每天的工作是{self.work}')
+
+
+class Lab_people(Person):
+    def __init__(self, name, learn, sector):
+        super().__init__(name)
+        self.learn = learn
+        self.sector = sector
+
+    def work(self):
+        print(f'我的名字是{self.name},为西安邮电大学本科生，现是实验室{self.sector}一员，我每天的工作任务是{self.learn}')
